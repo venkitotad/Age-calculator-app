@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap');
+
+:root {
+  --purple: hsl(259, 100%, 65%);
+  --red: hsl(0, 100%, 67%);
+  --white: hsl(0, 100%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --grey: hsl(0, 1%, 44%);
+  --black: hsl(0, 0%, 8%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--off-white);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.container {
+  background: var(--white);
+  width: 100%;
+  max-width: 840px;
+  padding: 56px;
+  border-radius: 24px 24px 200px 24px;
+}
+
+.inputs {
+  display: flex;
+  gap: 32px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: 160px;
+  gap: 8px;
+}
+
+.input-group label {
+  color: var(--grey);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--light-grey);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--black);
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: var(--purple);
+}
+
+.input-group input::placeholder {
+  color: var(--grey);
+  opacity: 0.8;
+}
+
+.error {
+  color: var(--red);
+  font-size: 11px;
+  font-style: italic;
+  min-height: 16px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.divider::before {
+  content: '';
+  height: 1px;
+  background: var(--light-grey);
+  flex: 1;
+}
+
+.divider button {
+  width: 80px;
+  height: 80px;
+  border: none;
+  border-radius: 50%;
+  background: var(--purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.divider button:hover {
+  background: var(--black);
+}
+
+.divider button img {
+  width: 40px;
+  height: 40px;
+}
+
+.results p {
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 800;
+  font-style: italic;
+  line-height: 1.1;
+  color: var(--black);
+}
+
+.results span {
+  color: var(--purple);
+  letter-spacing: 2px;
+}
+
+.attribution {
+  margin-top: 24px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 16px;
+  }
+
+  .container {
+    padding: 48px 24px;
+    border-radius: 24px 24px 100px 24px;
+  }
+
+  .inputs {
+    gap: 16px;
+  }
+
+  .input-group {
+    width: calc(33.333% - 11px);
+    min-width: 0;
+  }
+
+  .input-group label {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .input-group input {
+    font-size: 20px;
+    padding: 12px 8px;
+  }
+
+  .divider {
+    margin: 24px 0;
+    position: relative;
+  }
+
+  .divider::before {
+    position: absolute;
+    width: 100%;
+  }
+
+  .divider button {
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    z-index: 1;
+  }
+
+  .divider button img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .results p {
+    font-size: clamp(44px, 12vw, 64px);
+  }
+}
